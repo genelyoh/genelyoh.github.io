@@ -1,1 +1,1 @@
-# genelyoh.github.io
+- This is a repository for serving a blog through Git Hub Pages.
