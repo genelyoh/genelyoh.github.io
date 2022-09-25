@@ -1,0 +1,1482 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+<head>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>Changing x or y ticks to text labels</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="genelyoh">
+
+        <link rel="shortcut icon" href="">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="G's Data Science Note">
+        <meta itemprop="image" content="">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="https://genelyoh.github.io/theme/css/style.css" type="text/css"/>
+        <!--<link rel="stylesheet" href="https://genelyoh.github.io/theme/css/pygments.css" type="text/css"/-->
+
+        <!-- Feed Meta Data -->
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="">
+        <meta name="twitter:image" content="">
+
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:url" content="https://genelyoh.github.io/changing-x-or-y-ticks-to-text-labels.html">
+    <meta name="twitter:title" content="G's Data Science Note ~ Changing x or y ticks to text labels">
+    <meta name="twitter:description" content="Changing x or y ticks to text labels Summary You can change x or y ticks to text labels that you want to make shown on a plot by using below. ax.set_xticks(ticks,labels) ax.set_yticks(ticks,labels) It is also possible to control how the text labels are …">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="G's Data Science Note ~ Changing x or y ticks to text labels"/>
+    <meta property="og:description" content="Changing x or y ticks to text labels Summary You can change x or y ticks to text labels that you want to make shown on a plot by using below. ax.set_xticks(ticks,labels) ax.set_yticks(ticks,labels) It is also possible to control how the text labels are …"/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <!--<center><a href="https://genelyoh.github.io"><img id="avatar" src=""></a></center>-->
+    <h1 href="https://genelyoh.github.io">G's Data Science Note</h1>
+    <br>
+
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="https://genelyoh.github.io">Home</a></li>
+
+            
+                <li><a class="nav__link" href="https://genelyoh.github.io/pages/about.html">About</a></li>
+            
+            
+                <li><a class="nav__link" href="https://genelyoh.github.io/pages/disclaimer.html">Disclaimer</a></li>
+            
+            
+                <li><a class="nav__link" href="https://genelyoh.github.io/pages/privacy-policy.html">Privacy Policy</a></li>
+            
+
+        </ul>
+    </nav>
+
+    <p class="social">
+    </p>
+
+        <h2>Categories</h2>
+        <ul class="navbar">
+                <li class="active"><a
+                        href="https://genelyoh.github.io/category/matplotlib.html">Matplotlib</a></li>
+                <li><a
+                        href="https://genelyoh.github.io/category/others.html">Others</a></li>
+        </ul>
+
+
+</aside>
+
+<!-- Content -->
+<article >
+    <section id="content">
+        <h1 class="title">Notes</h1>
+        <article class="markdown-body">
+            <!--<h2 class="post_title post_detail"><a href="https://genelyoh.github.io/changing-x-or-y-ticks-to-text-labels.html" rel="bookmark"
+                                                  title="Permalink to Changing x or y ticks to text labels">Changing x or y ticks to text labels</a></h2>-->
+            <div class="entry-content blog-post">
+                <h1>Changing x or y ticks to text labels</h1>
+<h2>Summary</h2>
+<p>You can change x or y ticks to text labels that you want to make shown on a plot by using below.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ticks</span><span class="p">,</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">ticks</span><span class="p">,</span><span class="n">labels</span><span class="p">)</span>
+</code></pre></div>
+
+<p>It is also possible to control how the text labels are shown by setting keyword arguments in the <code>ax.set_xticks()</code> or <code>ax.set_yticks()</code>.<br>
+For example, like this.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ticks</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;bbb&quot;</span><span class="p">,</span><span class="s2">&quot;ccc&quot;</span><span class="p">],</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">))</span>
+</code></pre></div>
+
+<p>You can also see this.<br>
+- <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xticks.html">Matplotlib documentation-ax.set_xticks()</a><br>
+- <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_yticks.html">Matplotlib documentation-ax.set_yticks()</a></p>
+<h2>How you can do this</h2>
+<p>It sometimes happens during data analysis that you have to make a plot having specific text labels that you want to make shown on x or y axis. In addition, those text labels are likely to be too long to show correctly in its narrow space like under x-axis. In this case, it may be an effective way to rotate those text labels.</p>
+<p>I have learned about how these can be done when you make a plot with Matplotlib, so I will record the way to realize this kind of plot.</p>
+<h3>Step1: Preparing data</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+<span class="c1">#Preparing data,whicn is very simple as an example.</span>
+<span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;English&quot;</span><span class="p">,</span><span class="s2">&quot;Mathematics&quot;</span><span class="p">,</span><span class="s2">&quot;Science&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+<h3>Step2: Preparing data</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">#Text labels that you want to set on the axis. </span>
+<span class="c1">#Those labels are expected to be a list of strings based on Matplotlib documentation. </span>
+<span class="n">label_items</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Person_A&quot;</span><span class="p">,</span><span class="s2">&quot;Person_B&quot;</span><span class="p">,</span><span class="s2">&quot;Person_C&quot;</span><span class="p">,</span><span class="s2">&quot;Person_D&quot;</span><span class="p">,</span><span class="s2">&quot;Person_E&quot;</span><span class="p">]</span>
+
+<span class="c1">#Plot</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;English&quot;</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;English&quot;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Mathematics&quot;</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Mathematics&quot;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Science&quot;</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Science&quot;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1">#Change the xticks to text labels.</span>
+<span class="c1">#Here,text labels are rotated by using the keyword argument,&quot;rotation&quot;.</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">label_items</span><span class="p">,</span><span class="n">rotation</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Person&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Score&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>Jupyter Notebook</h2>
+<p>Now, let us check whether the plot having text labels are realized.</p>
+<style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+
+<span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;English&quot;</span><span class="p">,</span><span class="s2">&quot;Mathematics&quot;</span><span class="p">,</span><span class="s2">&quot;Science&quot;</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">label_items</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Person_A&quot;</span><span class="p">,</span><span class="s2">&quot;Person_B&quot;</span><span class="p">,</span><span class="s2">&quot;Person_C&quot;</span><span class="p">,</span><span class="s2">&quot;Person_D&quot;</span><span class="p">,</span><span class="s2">&quot;Person_E&quot;</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;English&quot;</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;English&quot;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Mathematics&quot;</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Mathematics&quot;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Science&quot;</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Science&quot;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">label_items</span><span class="p">,</span><span class="n">rotation</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Person&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Score&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>English</th>
+      <th>Mathematics</th>
+      <th>Science</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>93</td>
+      <td>21</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>72</td>
+      <td>70</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>88</td>
+      <td>94</td>
+      <td>96</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>43</td>
+      <td>89</td>
+      <td>58</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>25</td>
+      <td>52</td>
+      <td>59</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Text(0, 0.5, &#39;Score&#39;)</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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AMAoAicAAACMInACAADAKAInAAAAjCJwAgAAwCgCJwAAAIwicAIAAMAoAicAAACMInACAADAKAInAAAAjCJwAgAAwCgCJwAAAIwicAIAAMAoAicAAACMInACAADAKAInAAAAjCJwAgAAwCgCJwAAAIwicAIAAMAoAicAAACMInACAADAKAInAAAAjCJwAgAAwCgCJwAAAIwicAIAAMAoAicAAACMInACAADAKMcC59q1azVu3Dhdf/31Gjt2rFatWiVJ2r9/v8aPH6+cnByNHz9eX3zxhVMlAQAAwAEJTnxIMBjU7373O7366qu64oortHv3bv30pz/V8OHDNWPGDE2cOFHXX3+9li5dqry8PC1atMiJsgAAAOAAx2Y43W63ysvLJUnl5eVKT0/X0aNHtXPnTuXm5kqScnNztXPnTh05csSpsgAAAGCYIzOcLpdLTz31lKZOnaqUlBSdPHlSf/zjH+X1etW2bVtZliVJsixL6enp8nq9atOmjROlAQAAwDBHAmdVVZWef/55zZ8/X71799ann36qu+++W7Nnz47K+6emNovK+4QrLa25o5+H+oteQSToF4SLXkEk4qFfHAmcu3btUklJiXr37i1J6t27t5o0aaKkpCQdOnRItm3LsizZtq2SkhJlZmZG9P5lZScUCARNlH6OtLTmKi0td+SzUL/RK4gE/YJw0SuIhJP94na7LjgJ6Mg5nBkZGSouLtb/+3//T5K0b98+lZWV6ZJLLlF2drYKCgokSQUFBcrOzuZwOgAAQAPiyAxnWlqaZs6cqbvuuksul0uS9Pjjj6tVq1aaOXOm7r//fs2fP18tWrTQrFmznCgJAAAADnEFg0FnjkUbxCF1xCN6BZGgXxAuegWRaFSH1AEAANB4ETgBAABgFIETAAAARhE4AQAAYBSBEwAAAEYROAEAAGAUgRMAAABGETgBAABgFIETAAAARhE4AQAAYBSBEwAAAEYROAEAAGAUgRMAAABGETgBAABgFIETAAAARhE4AQAAYBSBEwAAAEYROAEAAGAUgRMAAABGETgBAABgFIETAAAARhE4AQAAYBSBEwAAAEYROAEAAGAUgRMAAABGETgBAABgFIETAAAARhE4AQAAYBSBEwAAAEYROAEAAGAUgRMAAABGETgBAABgFIETAAAARhE4AQAAYBSBEwAAAEYROAEAAGAUgRMA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qqoznqusrNS9994b9aIAAED1VccJLqvWMbG66hiIRNiB8+DBg8rKyjrjuQ4dOuirr76KelEAACC+rzoGIhF24MzIyNCOHTvOeG7Hjh1KT0+PelEAAKBavF51DEQi7HM4f/azn2nq1Km6/fbb1aFDBx04cEAvvviifvWrX5msDwCARi8erzoGIhF24Lz55pvVvHlzvfHGGzp06JAyMjJ0//33Kycnx2R9AAAAqOfqPKS+fft27dmzR5I0atQozZ49W126dNGhQ4e0YcMGnTx50niRAAAAqL/qDJyPP/64Dh8+HHr84IMP6sCBA5owYYL27t2rOXPmGC0QAAAA9VudgXPfvn2he28eP35c69at05w5c3TLLbdo3rx5Wrt2rfEiAQAAUH/VGTht2w6tJrR161alpaXp0ksvlSRlZmbq+PHjZisEAABAvVZn4Lz88sv117/+VZK0fPlyDRgwIPTaoUOH1Lx5c3PVAQAAoN6r8yr1e+65R1OmTNHMmTPldrv12muvhV5bvny5evViOS0AAABcWJ2Bs0+fPlq7dq2++OILdezYUc2aNQu9NmTIEP34xz82WiAAAADqt7Duw9msWTN169btnOcvu+yyqBcEAACAhiXspS0BAACA74LACQAAAKMInAAAADCKwAkAAACjCJwAAAAwisAJAAAAowicAAAAMIrACQAAAKMInAAAADCKwAkAAACjCJwAAAAwisAJAAAAowicAAAAMIrACQAAAKMSYl0AAAAAoidwvET+whWq3PuRyisrJE+SPJ0HKrHHSLlbpMekJgInAABAA1H1r0J9s/oZybaloF39ZKVPlbvWqXLPh2oyfJoSOvRwvC4OqQMAADQAgeMl1WGzyv9t2KwRtKUqv75Z/YwCx0scr43ACQAA0AD4C1dUz2zWxrblL1zpTEGnIXACAAA0AJV7Pzp3ZvNsQbt6nMMInAAAAA1BpS+646KIwAkAANAQeJKjOy6KCJwAAAANgKfzQMll1T7IZVWPcxiBEwAAoAFI7DFSsuoInJalxB45zhR0GgInAABAA+Buka4mw6dJCYnnznS6LCkhUU2GT4vJzd+58TsAAEADkdChh5re9Kj8hSurr0av9Eme5P9baSiHlYYAAADw/blbpCt50GQlD5qstLTmKi0tj3VJHFIHAACAWY7NcA4dOlSJiYlKSkqSJN1zzz0aPHiw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SYqvuxg0+qvUbdtWeXl5vdtwiA36BeGiVxCp8+2g3H333ZKqd1CmT58uSayf3sg9/fTT+vOf/6xLL71UPp9PX375pVJTU/Xcc89p69atys3NlRR/iwI0+sBZXzccYoN+QbjoFUSCHRSEY/ny5fr000+1dOlSrV27Vvn5+ZozZ44KCwu1f/9+TZs2LTQrHm+nXTTqwFmfNxycR78gXPQKIsUOCsLxt7/9TbfeeqsyMjL005/+VEVFRdq/f7/uuuuuc8bG245Jow6c9XnDwXn0C8JFryAS7KAgHMePH9fatWs1atQoHT16VK1bt9auXbs0bdo0SfG/M9JoO7dmwwWDQR09elSStGvXLvXs2VPSt1cLAhL9gvDRK4jU2TsovXv3Du2gzJo1S926dVNiYqIkdlAas6ZNm2revHl69dVX9R//8R+69957VVJSol69eklSXIdNqRHfh9O2ba1bt04vv/yyjh49qi5dumjnzp0qKCjgBxrnoF8QLnoFkTh+/LiuueYazZ49W3379lXr1q3185//XNOmTVPv3r3jftYKsXHs2DGtWbNGL774olJTU9WzZ0/dfPPNat++faxLu6BGGzhPVx83HGKHfkG46BXUhR0UfF9FRUV66aWXdM0112jIkCGxLueCCJxnqS8bDvGBfkG46BXUhR0UNGQETgAA4gw7KGhoCJwAAAAwqtFepQ4AAABnEDgBAABgFIETAAAARhE4AQAAYFSjXtoSAL6PoUOH6vDhw7IsS02aNNE111yjBx98UE2bNo11aQAQV5jhBIDv4bnnntNnn32mt99+W9u3b9f//u//hv21wWBQgUDAYHUAEB8InAAQBW3bttXgwYO1d+9ebd26VRMmTFCfPn00duxYbdy4MTRu8uTJevLJJzVhwgT17NlTRUVFeuuttzRs2DBdddVVGjp0qN555x1JUiAQ0Pz583XddddpwIAB+t3vfqfy8nJJ0pdffqkuXbro7bff1rXXXqv+/ftHFHYBwEkETgCIAq/Xq/Xr1ystLU2//OUvNWXKFG3atEn33XeffvOb3+jIkSOhsUuXLtUjjzyiLVu2qE2bNnr00Uf1pz/9SZ999pmWLFmi7OxsSdJbb72lt99+W4sWLdLq1at16tQpPfzww2d87qeffqoVK1bo5Zdf1rPPPqt9+/Y5+n0DQDgInADwPdx5553q06ePJk6cqL59+yojIyO0Oozb7daPfvQjdevWTevWrQt9zQ033KDOnTsrISFBlmXJ7XZr79698vl8Sk9PV+fOnSVJy5Yt089+9jNlZWWpadOmmj59upYvX66qqqrQe02bNk3Jycm68sordeWVV2r37t2O/x8AQF24aAgAvodnn31WAwcODD2eOXOmVqxYobVr14aeq6qqUv/+/UOPMzMzQ/9OSUnRk08+qRdeeEG///3v1atXL913333q1KmTSkpKzlhHu3379qqqqlJZWVnouYsuuij07yZNmujUqVNR/x4B4PsicAJAFGVmZur666/Xo48+esExLpfrjMeDBw/W4MGD5fP59NRTT+nBBx/Ua6+9pvT0dH311VehcQcPHlRCQoJSU1NVXFxs7HsAgGjjkDoARNHYsWO1du1affDBB7JtWxUVFdq4ceMFA+Lhw4dD52cmJiYqJSVFbnf1r+bc3Fy9/PLLKioq0smTJ/Xkk09q1KhRSkhgrgBA/ULgBIAoyszM1Pz58/X8889rwIABGjJkiBYuXHjB2x8FAgG99NJLGjx4sPr166fNmzdr5syZkqQbb7xRY8eO1aRJkzRs2DAlJibqwQcfdPC7AYDocAWDwWCsiwAAAEDDxQwnAAAAjCJwAgAAwCgCJwAAAIwicAIAAMAoAicAAACMInACAADAKAInAAAAjCJwAgAAwCgCJwAAAIz6/5C2RuTctJFsAAAAAElFTkSuQmCC"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+ 
+
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+<h3>References</h3>
+<ul>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xticks.html">Matplotlib documentation-ax.set_xticks()</a></li>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_yticks.html">Matplotlib documentation-ax.set_yticks()</a></li>
+</ul>
+            </div>
+            <div class="post_list">
+                <span>By </span>
+                <a href="https://genelyoh.github.io/author/genelyoh.html">@genelyoh</a>
+                <span> in </span>
+                <span class="post_category"><a href="https://genelyoh.github.io/category/matplotlib.html" rel="bookmark"
+                                               title="Permalink to Matplotlib">[ Matplotlib ]</a></span>
+                <span class="post_date">Sun 25 September 2022</span>
+                <div><span>Tags : </span>
+                </div>
+
+                <div class="entry-social">
+                    <span class="twitter"><a target="_blank" rel="nofollow"
+                                             onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;"
+                                             title="Twitter"
+                                             href="https://twitter.com/share?url=https://genelyoh.github.io/changing-x-or-y-ticks-to-text-labels.html&text=Changing x or y ticks to text labels&via="><img
+                            src="https://genelyoh.github.io/theme/images/icons/twitter-s.png"></a></span>
+
+                    <span class="gplus"><a target="_blank" title="Google +"
+                                           href="https://plus.google.com/share?url=https://genelyoh.github.io/changing-x-or-y-ticks-to-text-labels.html&hl=fr"
+                                           rel="nofollow"
+                                           onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img
+                            src="https://genelyoh.github.io/theme/images/icons/google-s.png"></a></span>
+
+                    <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow"
+                                              onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"
+                                              href="https://www.facebook.com/sharer.php?u=https://genelyoh.github.io/changing-x-or-y-ticks-to-text-labels.html&t=Changing x or y ticks to text labels"><img
+                            src="https://genelyoh.github.io/theme/images/icons/facebook-s.png"></a></span>
+
+                    <a target="_blank" title="Linkedin"
+                       href="https://www.linkedin.com/shareArticle?mini=true&url=https://genelyoh.github.io/changing-x-or-y-ticks-to-text-labels.html&title=Changing x or y ticks to text labels"
+                       rel="nofollow"
+                       onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img
+                            src="https://genelyoh.github.io/theme/images/icons/linkedin-s.png"></a>
+
+                    <span class="mail"><a
+                            href="mailto:?subject=Changing x or y ticks to text labels&amp;body=Viens découvrir un article à propos de [Changing x or y ticks to text labels] sur le site de genelyoh. https://genelyoh.github.io/changing-x-or-y-ticks-to-text-labels.html"
+                            title="Share by Email" target="_blank"><img
+                            src="https://genelyoh.github.io/theme/images/icons/mail-s.png"></a></span>
+                </div>
+            </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+    <footer>
+        <p>
+            Blog powered by <a href="http://getpelican.com/">Pelican</a>,
+            which takes great advantage of <a href="http://python.org">Python</a>.
+            Theme <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> by <a
+                href="https://parbhatpuri.com/">@parbhat</a>.
+        </p>
+    </footer>
+
+
+</body>
+</html>
